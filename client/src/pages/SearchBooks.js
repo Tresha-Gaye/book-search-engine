@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
-import { useQuery, useMutation } from '@apollo/client';
+import { useMutation } from '@apollo/client';
+import { SAVE_BOOK } from '../utils/mutations';
 
-import { saveBook, searchGoogleBooks } from '../utils/API';
+// import { saveBook, searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
 const SearchBooks = () => {
@@ -52,13 +53,14 @@ const SearchBooks = () => {
     } catch (err) {
       console.error(err);
     }
+  }
   };
 
   // create function to handle saving a book to our database
-  const handleSaveBook = async (bookId) => {
+
+function handleSaveBook(bookId) {
 
     const [saveBook] = useMutation(SAVE_BOOK);
-
 
     // find the book in `searchedBooks` state by the matching id
     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
@@ -70,8 +72,9 @@ const SearchBooks = () => {
       return false;
     }
 
+  
     try {
-      const response = await saveBook(bookToSave, token);
+      const response = saveBook(bookToSave, token);
 
       if (!response.ok) {
         throw new Error('something went wrong!');
@@ -81,7 +84,7 @@ const SearchBooks = () => {
       setSavedBookIds([...savedBookIds, bookToSave.bookId]);
     } catch (err) {
       console.error(err);
-    }
+    
   };
 
   return (

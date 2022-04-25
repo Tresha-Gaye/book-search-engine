@@ -17,17 +17,6 @@ const resolvers = {
       throw new AuthenticationError('Not logged in');
     },
 
-    // // get all users
-    // thoughts: async (parent, {username}) => {
-    //   const params = username ? { username } : {};
-    //   return Thought.find(params).sort({ createdAt: -1 });
-    // },
-
-    // // get a single thought 
-    // thought: async (parent, { _id }) => {
-    //   return Thought.findOne({ _id });
-    // },
-
     // get all users
     users: async () => {
       return User.find()
