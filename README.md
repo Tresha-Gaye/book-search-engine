@@ -73,10 +73,13 @@ The application .....
 
 **Below are a screenshots of the app showing the functionality:**
  
-<br />
 ![login view](./client/public/assets/login.jpg)  
 <br />
+
 ![search results](./client/public/assets/search.jpg)  
+<br />
+
+![save books](../public/assets/save.jpg)  
 <br />
 
 ## Contributing
