@@ -74,9 +74,9 @@ The application .....
 **Below are a screenshots of the app showing the functionality:**
  
 <br />
-![pic1](./public/...)  
+![login view](./client/public/assets/login.jpg)  
 <br />
-![pics2](./public/...)  
+![search results](./client/public/assets/search.jpg)  
 <br />
 
 ## Contributing
