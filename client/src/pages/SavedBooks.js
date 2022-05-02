@@ -18,7 +18,6 @@ const SavedBooks = () => {
 
   // useMutation Hooks executes the REMOVE_BOOK mutation 
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
-  // console.log(error)
 
   const userData = data?.me || {};
 
@@ -44,8 +43,8 @@ const SavedBooks = () => {
     return <h2>LOADING...</h2>;
   }
 
-  console.log(userData);
-  
+  // console.log(userData);
+
   return (
     <>
       <Jumbotron fluid className='text-light bg-dark'>
@@ -61,6 +60,7 @@ const SavedBooks = () => {
         </h2>
         <CardColumns>
           {userData.savedBooks?.map((book) => {
+            console.log(book);
             return (
               <Card key={book.bookId} border='dark'>
                 {book.image ? <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' /> : null}

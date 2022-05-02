@@ -20,7 +20,6 @@ const SearchBooks = () => {
 
   // useMutation Hook executes SAVE_BOOK mutation instead of the saveBook() API function
   const [saveBook, { error }] = useMutation(SAVE_BOOK);
-  // console.log(error);
 
   useEffect(() => {
     return () => saveBookIds(savedBookIds);
@@ -71,6 +70,7 @@ const handleSaveBook = async (bookId) => {
     
     // find the book in `searchedBooks` state by the matching id
     const bookToSave = searchedBooks.find((book) => book.bookId === bookId);
+    console.log(bookToSave, bookId);
 
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
@@ -81,7 +81,8 @@ const handleSaveBook = async (bookId) => {
 
   
     try {
-      await saveBook({ variables: { book: bookToSave }});
+      await saveBook({ variables: { bookInp: { ...bookToSave }}});
+      console.log("here");
 
 
       // if book successfully saves to user's account, save book id to state
