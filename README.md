@@ -4,7 +4,7 @@
 
 This application refactors a functioning Google Books search engine built with a RESTful API into a GraphQL API built with Appollo Server. 
 
-You may view the deployed application by [clicking this link](https://git.heroku.com/peaceful-refuge-87466.git).
+You may view the deployed application by [clicking this link](https://peaceful-refuge-87466.herokuapp.com/).
 
 
 ## Technologies
@@ -67,9 +67,7 @@ THEN that book is deleted from my saved books list
 WHEN I click on the Logout button
 THEN I am logged out of the site and presented with a menu with the options Search for Books and Login/Signup and an input field to search for books and a submit button  
 
-## Accomplishments and Challenges
-
-The application .....
+## Accomplishments 
 
 **Below are a screenshots of the app showing the functionality:**
  
@@ -79,7 +77,7 @@ The application .....
 ![search results](./client/public/assets/search.jpg)  
 <br />
 
-![save books](../public/assets/save.jpg)  
+![save books](./client/public/assets/save.jpg)  
 <br />
 
 ## Contributing
